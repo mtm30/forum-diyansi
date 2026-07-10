@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>غير أولاد الديانسي - حي الرغاية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #1a5f2a;
@@ -24,11 +23,7 @@
             --shadow-lg: 0 20px 60px rgba(0,0,0,0.2);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cairo', sans-serif;
@@ -38,13 +33,10 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-pattern {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: 
                 radial-gradient(circle at 20% 50%, rgba(26, 95, 42, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(230, 126, 34, 0.1) 0%, transparent 40%),
@@ -58,7 +50,6 @@
             background: rgba(22, 27, 34, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding: 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -73,10 +64,6 @@
         .welcome-text {
             color: white;
             font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
 
         .header-main {
@@ -102,7 +89,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 32px;
             box-shadow: 0 5px 20px rgba(230, 126, 34, 0.4);
         }
 
@@ -112,7 +99,6 @@
             background: linear-gradient(135deg, #fff 0%, #d4a574 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .logo-text span {
@@ -146,13 +132,7 @@
             font-size: 14px;
         }
 
-        .search-box input::placeholder {
-            color: #666;
-        }
-
-        .search-box i {
-            color: #666;
-        }
+        .search-box input::placeholder { color: #666; }
 
         .btn {
             padding: 10px 25px;
@@ -222,9 +202,7 @@
             border-bottom-color: var(--secondary);
         }
 
-        .nav-list a i {
-            font-size: 16px;
-        }
+        .nav-list a .emoji { font-size: 16px; }
 
         /* Main Content */
         .main {
@@ -250,10 +228,8 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
             animation: pulse 4s ease-in-out infinite;
         }
@@ -287,9 +263,7 @@
             position: relative;
         }
 
-        .stat {
-            text-align: center;
-        }
+        .stat { text-align: center; }
 
         .stat-number {
             font-size: 36px;
@@ -297,15 +271,11 @@
             background: var(--gradient-2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-        }
+        .stat-label { font-size: 14px; color: #666; }
 
-        /* Categories Grid */
+        /* Section Header */
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -325,7 +295,7 @@
             color: white;
         }
 
-        .section-title .icon {
+        .section-icon {
             width: 50px;
             height: 50px;
             background: var(--gradient-1);
@@ -333,9 +303,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 24px;
         }
 
+        /* Categories Grid */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -356,19 +327,14 @@
         .category-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
             background: var(--gradient-1);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
 
-        .category-card:hover::before {
-            transform: scaleX(1);
-        }
-
+        .category-card:hover::before { transform: scaleX(1); }
         .category-card:hover {
             transform: translateY(-5px);
             border-color: rgba(212, 165, 116, 0.3);
@@ -389,7 +355,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 32px;
             flex-shrink: 0;
         }
 
@@ -434,14 +400,11 @@
             font-size: 13px;
         }
 
-        .cat-stat i {
-            color: var(--secondary);
-        }
+        .cat-stat .emoji { font-size: 14px; }
 
         .category-badge {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 20px; left: 20px;
             background: var(--gradient-2);
             color: white;
             padding: 5px 12px;
@@ -450,7 +413,7 @@
             font-weight: 600;
         }
 
-        /* Latest Posts */
+        /* Posts Grid */
         .posts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -580,14 +543,11 @@
             gap: 40px;
         }
 
-        .footer-about .logo {
-            margin-bottom: 20px;
-        }
-
         .footer-about p {
             color: #666;
             font-size: 14px;
             line-height: 1.8;
+            margin-top: 15px;
         }
 
         .footer h4 {
@@ -601,9 +561,7 @@
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 12px;
-        }
+        .footer-links li { margin-bottom: 12px; }
 
         .footer-links a {
             color: #888;
@@ -612,9 +570,7 @@
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
+        .footer-links a:hover { color: var(--secondary); }
 
         .social-links {
             display: flex;
@@ -631,15 +587,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-size: 18px;
+            font-size: 20px;
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             background: var(--gradient-1);
             border-color: transparent;
-            color: white;
         }
 
         .footer-bottom {
@@ -652,17 +606,6 @@
             font-size: 13px;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Floating Action Button */
         .fab {
             position: fixed;
             bottom: 30px;
@@ -674,104 +617,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            color: white;
+            font-size: 28px;
             box-shadow: 0 10px 30px rgba(230, 126, 34, 0.5);
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 999;
         }
 
-        .fab:hover {
-            transform: scale(1.1);
-        }
+        .fab:hover { transform: scale(1.1); }
 
-        /* Responsive */
         @media (max-width: 1024px) {
-            .header-main {
-                padding: 15px 20px;
-            }
-
-            .nav {
-                padding: 0 20px;
-            }
-
-            .main {
-                padding: 20px;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            .header-main { padding: 15px 20px; }
+            .nav { padding: 0 20px; }
+            .main { padding: 20px; }
+            .categories-grid, .posts-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .header-top {
-                display: none;
-            }
-
-            .logo-text span {
-                display: none;
-            }
-
-            .search-box {
-                display: none;
-            }
-
-            .nav-list {
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 10px;
-            }
-
-            .nav-list a {
-                padding: 12px 15px;
-                font-size: 13px;
-            }
-
-            .hero {
-                padding: 30px 20px;
-            }
-
-            .hero h2 {
-                font-size: 24px;
-            }
-
-            .hero-stats {
-                gap: 30px;
-            }
-
-            .stat-number {
-                font-size: 28px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
+            .header-top { display: none; }
+            .logo-text span, .search-box { display: none; }
+            .nav-list { overflow-x: auto; justify-content: flex-start; }
+            .hero { padding: 30px 20px; }
+            .hero h2 { font-size: 24px; }
+            .hero-stats { gap: 30px; }
+            .stat-number { font-size: 28px; }
+            .footer-content { grid-template-columns: 1fr; }
         }
 
-        /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .category-card, .post-card {
@@ -793,15 +669,12 @@
     <header class="header">
         <div class="header-top">
             <div class="welcome-text">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>مرحباً بكم في منتدى حي غير أولاد الديانسي - الرغاية</span>
+                📍 مرحباً بكم في منتدى حي غير أولاد الديانسي - الرغاية
             </div>
         </div>
         <div class="header-main">
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-users"></i>
-                </div>
+                <div class="logo-icon">👥</div>
                 <div class="logo-text">
                     <h1>غير أولاد الديانسي</h1>
                     <span>منتدى حي الرغاية</span>
@@ -809,32 +682,27 @@
             </div>
             <div class="header-actions">
                 <div class="search-box">
-                    <i class="fas fa-search"></i>
+                    <span>🔍</span>
                     <input type="text" placeholder="ابحث في المنتدى...">
                 </div>
                 <button class="btn btn-outline">
-                    <i class="fas fa-sign-in-alt"></i>
-                    تسجيل الدخول
+                    <span>🔓</span> تسجيل الدخول
                 </button>
                 <button class="btn btn-primary">
-                    <i class="fas fa-user-plus"></i>
-                    عضوية جديدة
+                    <span>➕</span> عضوية جديدة
                 </button>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
         <nav class="nav">
             <ul class="nav-list">
-                <li><a href="#" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
-                <li><a href="#"><i class="fas fa-utensils"></i> الطبخ</a></li>
-                <li><a href="#"><i class="fas fa-images"></i> الصور</a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i> البيع والشراء</a></li>
-                <li><a href="#"><i class="fas fa-newspaper"></i> الأخبار</a></li>
-                <li><a href="#"><i class="fas fa-futbol"></i> الرياضة</a></li>
-                <li><a href="#"><i class="fas fa-comments"></i> النقاشات</a></li>
-                <li><a href="#"><i class="fas fa-briefcase"></i> الوظائف</a></li>
+                <li><a href="#" class="active"><span class="emoji">🏠</span> الرئيسية</a></li>
+                <li><a href="#"><span class="emoji">🍳</span> الطبخ</a></li>
+                <li><a href="#"><span class="emoji">📷</span> الصور</a></li>
+                <li><a href="#"><span class="emoji">🛒</span> البيع والشراء</a></li>
+                <li><a href="#"><span class="emoji">📰</span> الأخبار</a></li>
+                <li><a href="#"><span class="emoji">⚽</span> الرياضة</a></li>
+                <li><a href="#"><span class="emoji">💬</span> النقاشات</a></li>
+                <li><a href="#"><span class="emoji">💼</span> الوظائف</a></li>
             </ul>
         </nav>
     </header>
@@ -869,7 +737,7 @@
         <section>
             <div class="section-header">
                 <div class="section-title">
-                    <div class="icon"><i class="fas fa-th-large"></i></div>
+                    <div class="section-icon">📋</div>
                     <h3>أقسام المنتدى</h3>
                 </div>
             </div>
@@ -879,46 +747,30 @@
                 <div class="category-card">
                     <span class="category-badge">الأكثر نشاطاً</span>
                     <div class="category-header">
-                        <div class="category-icon icon-cooking">
-                            <i class="fas fa-utensils"></i>
-                        </div>
+                        <div class="category-icon icon-cooking">🍳</div>
                         <div class="category-info">
                             <h4>قسم الطبخ والوصفات</h4>
                             <p>شاركي وصفاتك المفضلة وأسرار المطبخ، من الأطباق التقليدية الجزائرية إلى الحلويات والنكتير</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>3,245 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>45,890 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>3,245 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>45,890 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم الصور -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-photos">
-                            <i class="fas fa-camera"></i>
-                        </div>
+                        <div class="category-icon icon-photos">📷</div>
                         <div class="category-info">
                             <h4>قسم الصور</h4>
                             <p>معرض صور الحي، المناسبات، المعالم، وأجمل اللحظات من حياتنا في غير أولاد الديانسي</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>2,156 ألبوم</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>38,450 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>2,156 ألبوم</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>38,450 مشاهدة</span></div>
                     </div>
                 </div>
 
@@ -926,207 +778,135 @@
                 <div class="category-card">
                     <span class="category-badge">جديد</span>
                     <div class="category-header">
-                        <div class="category-icon icon-market">
-                            <i class="fas fa-store"></i>
-                        </div>
+                        <div class="category-icon icon-market">🛒</div>
                         <div class="category-info">
                             <h4>البيع والشراء</h4>
                             <p>سوق الحي الإلكتروني - بيع وشراء، خدمات، وتأجير في منطقتك</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>1,890 إعلان</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>28,320 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>1,890 إعلان</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>28,320 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم أخبار الحي -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-news">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
+                        <div class="category-icon icon-news">📢</div>
                         <div class="category-info">
                             <h4>أخبار الحي</h4>
                             <p>آخر الأخبار والأنشطة في الحي، المشاريع، والفعاليات القادمة</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>456 خبر</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>15,670 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>456 خبر</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>15,670 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم الرياضة -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-sports">
-                            <i class="fas fa-futbol"></i>
-                        </div>
+                        <div class="category-icon icon-sports">⚽</div>
                         <div class="category-info">
                             <h4>قسم الرياضة</h4>
                             <p>نتائج المباريات، أندية الحي، البطولات المحلية، ونقاشات كرة القدم</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>1,234 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>22,180 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>1,234 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>22,180 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم النقاشات العامة -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-chat">
-                            <i class="fas fa-comments"></i>
-                        </div>
+                        <div class="category-icon icon-chat">💬</div>
                         <div class="category-info">
                             <h4>النقاشات العامة</h4>
                             <p>كل ما يخص الحي وأهله - آراء، مقترحات، أسئلة، وترحيب بالأعضاء الجدد</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>2,890 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>35,670 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>2,890 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>35,670 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم الوظائف -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-jobs">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
+                        <div class="category-icon icon-jobs">💼</div>
                         <div class="category-info">
                             <h4>الوظائف والعمل</h4>
                             <p>فرص عمل، طلبات توظيف، وأعمال حرة متوفرة في المنطقة</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>567 وظيفة</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>12,340 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>567 وظيفة</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>12,340 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم الصحة -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-health">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
+                        <div class="category-icon icon-health">❤️</div>
                         <div class="category-info">
                             <h4>الصحة والطب</h4>
                             <p>نصائح صحية، معلومات طبية، والبحث عن أطباء في المنطقة</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>890 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>18,450 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>890 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>18,450 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم التكنولوجيا -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-tech">
-                            <i class="fas fa-laptop"></i>
-                        </div>
+                        <div class="category-icon icon-tech">💻</div>
                         <div class="category-info">
                             <h4>التكنولوجيا</h4>
                             <p>هواتف، حواسيب، إنترنت، وحلول تقنية لأهل الحي</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>1,123 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>20,890 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>1,123 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>20,890 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم الدين -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-religion">
-                            <i class="fas fa-mosque"></i>
-                        </div>
+                        <div class="category-icon icon-religion">🕌</div>
                         <div class="category-info">
                             <h4>الشؤون الدينية</h4>
                             <p>أنشطة دينية، محاضرات، مواعيد الصلاة، وخيرات الحي</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>678 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>14,230 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>678 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>14,230 مشاهدة</span></div>
                     </div>
                 </div>
 
                 <!-- قسم التعليم -->
                 <div class="category-card">
                     <div class="category-header">
-                        <div class="category-icon icon-education">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
+                        <div class="category-icon icon-education">🎓</div>
                         <div class="category-info">
                             <h4>التعليم والدروس</h4>
                             <p>معلمين، دورات، مدرسين خصوصيين، ومساعدة في الواجبات</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>456 موضوع</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>11,780 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>456 موضوع</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>11,780 مشاهدة</span></div>
                     </div>
                 </div>
 
@@ -1134,23 +914,15 @@
                 <div class="category-card">
                     <span class="category-badge">قريباً</span>
                     <div class="category-header">
-                        <div class="category-icon icon-events">
-                            <i class="fas fa-calendar-star"></i>
-                        </div>
+                        <div class="category-icon icon-events">📅</div>
                         <div class="category-info">
                             <h4>الفعاليات والمناسبات</h4>
                             <p>حفلات، مهرجانات، أعراس، ومناسبات الحي المختلفة</p>
                         </div>
                     </div>
                     <div class="category-stats">
-                        <div class="cat-stat">
-                            <i class="fas fa-comments"></i>
-                            <span>234 فعالية</span>
-                        </div>
-                        <div class="cat-stat">
-                            <i class="fas fa-eye"></i>
-                            <span>9,560 مشاهدة</span>
-                        </div>
+                        <div class="cat-stat"><span class="emoji">💬</span> <span>234 فعالية</span></div>
+                        <div class="cat-stat"><span class="emoji">👁️</span> <span>9,560 مشاهدة</span></div>
                     </div>
                 </div>
             </div>
@@ -1160,7 +932,7 @@
         <section style="margin-top: 50px;">
             <div class="section-header">
                 <div class="section-title">
-                    <div class="icon"><i class="fas fa-fire"></i></div>
+                    <div class="section-icon">🔥</div>
                     <h3>أحدث المواضيع</h3>
                 </div>
                 <button class="btn btn-outline">عرض الكل</button>
@@ -1177,8 +949,7 @@
                             </div>
                         </div>
                         <div class="post-time">
-                            <i class="far fa-clock"></i>
-                            منذ 15 دقيقة
+                            <span>🕐</span> منذ 15 دقيقة
                         </div>
                     </div>
                     <h4 class="post-title">وصفة كسكس جزائري أصيل - الطريقة التقليدية</h4>
@@ -1190,8 +961,8 @@
                             <span class="tag">كسكس</span>
                         </div>
                         <div class="post-actions">
-                            <span><i class="far fa-heart"></i> 124</span>
-                            <span><i class="far fa-comment"></i> 45</span>
+                            <span>❤️ 124</span>
+                            <span>💬 45</span>
                         </div>
                     </div>
                 </div>
@@ -1206,8 +977,7 @@
                             </div>
                         </div>
                         <div class="post-time">
-                            <i class="far fa-clock"></i>
-                            منذ ساعة
+                            <span>🕐</span> منذ ساعة
                         </div>
                     </div>
                     <h4 class="post-title">صور من حفلة العرس الجماعي - حي غير أولاد الديانسي</h4>
@@ -1216,11 +986,10 @@
                         <div class="post-tags">
                             <span class="tag">صور</span>
                             <span class="tag">مناسبات</span>
-                            <span class="tag">أعراس</span>
                         </div>
                         <div class="post-actions">
-                            <span><i class="far fa-heart"></i> 89</span>
-                            <span><i class="far fa-comment"></i> 23</span>
+                            <span>❤️ 89</span>
+                            <span>💬 23</span>
                         </div>
                     </div>
                 </div>
@@ -1235,20 +1004,19 @@
                             </div>
                         </div>
                         <div class="post-time">
-                            <i class="far fa-clock"></i>
-                            منذ ساعتين
+                            <span>🕐</span> منذ ساعتين
                         </div>
                     </div>
                     <h4 class="post-title">للبيع: شقة 3 غرف بموقع ممتاز - الحي الجديد</h4>
-                    <p class="post-preview">شقة للبيع，面积 85م²، طابق 3 مع مصعد، موقع استراتيجي perto from مسجد...</p>
+                    <p class="post-preview">شقة للبيع 85م²، طابق 3 مع مصعد، موقع استراتيجي قرب المسجد...</p>
                     <div class="post-footer">
                         <div class="post-tags">
                             <span class="tag">عقارات</span>
                             <span class="tag">للبيع</span>
                         </div>
                         <div class="post-actions">
-                            <span><i class="far fa-heart"></i> 12</span>
-                            <span><i class="far fa-comment"></i> 8</span>
+                            <span>❤️ 12</span>
+                            <span>💬 8</span>
                         </div>
                     </div>
                 </div>
@@ -1263,8 +1031,7 @@
                             </div>
                         </div>
                         <div class="post-time">
-                            <i class="far fa-clock"></i>
-                            منذ 3 ساعات
+                            <span>🕐</span> منذ 3 ساعات
                         </div>
                     </div>
                     <h4 class="post-title">مباراة كرة القدم يوم الجمعة - فرق الحي</h4>
@@ -1273,11 +1040,10 @@
                         <div class="post-tags">
                             <span class="tag">رياضة</span>
                             <span class="tag">كرة قدم</span>
-                            <span class="tag">فاعلية</span>
                         </div>
                         <div class="post-actions">
-                            <span><i class="far fa-heart"></i> 67</span>
-                            <span><i class="far fa-comment"></i> 34</span>
+                            <span>❤️ 67</span>
+                            <span>💬 34</span>
                         </div>
                     </div>
                 </div>
@@ -1290,21 +1056,19 @@
         <div class="footer-content">
             <div class="footer-about">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                    <div class="logo-icon">👥</div>
                     <div class="logo-text">
                         <h1>غير أولاد الديانسي</h1>
                         <span>منتدى حي الرغاية</span>
                     </div>
                 </div>
-                <p>منتدى غير أولاد الديانسي هو منصة رقمية لخدمة أهالي الحي،促進 التواصل، ومشاركة الأخبار والمعلومات.</p>
+                <p>منتدى غير أولاد الديانسي هو منصة رقمية لخدمة أهالي الحي،、促进 التواصل، ومشاركة الأخبار والمعلومات.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#">📘</a>
+                    <a href="#">📷</a>
+                    <a href="#">💬</a>
+                    <a href="#">✈️</a>
+                    <a href="#">▶️</a>
                 </div>
             </div>
             <div>
@@ -1330,9 +1094,9 @@
             <div>
                 <h4>تواصل معنا</h4>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-envelope"></i> info@diyansi.com</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i> 0555 123 456</a></li>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> الرغاية، الجزائر</a></li>
+                    <li><a href="#">📧 info@diyansi.com</a></li>
+                    <li><a href="#">📞 0555 123 456</a></li>
+                    <li><a href="#">📍 الرغاية، الجزائر</a></li>
                 </ul>
             </div>
         </div>
@@ -1342,8 +1106,6 @@
     </footer>
 
     <!-- Floating Action Button -->
-    <div class="fab">
-        <i class="fas fa-plus"></i>
-    </div>
+    <div class="fab">➕</div>
 </body>
 </html>
