@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غير أولاد الديانسي - حي الرغاية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5f2a;
+            --primary-dark: #134420;
+            --secondary: #d4a574;
+            --accent: #e67e22;
+            --dark: #1a1a2e;
+            --darker: #16213e;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gold: #f1c40f;
+            --success: #27ae60;
+            --gradient-1: linear-gradient(135deg, #1a5f2a 0%, #27ae60 100%);
+            --gradient-2: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+            --shadow: 0 10px 40px rgba(0,0,0,0.15);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(180deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+            min-height: 100vh;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 95, 42, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(230, 126, 34, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(39, 174, 96, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(22, 27, 34, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: var(--gradient-1);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .welcome-text {
+            color: white;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .header-main {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.4);
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, #d4a574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 300px;
+        }
+
+        .search-box input {
+            background: none;
+            border: none;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .search-box input::placeholder {
+            color: #666;
+        }
+
+        .search-box i {
+            color: #666;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: none;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(230, 126, 34, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--secondary);
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(22, 27, 34, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 0 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            max-width: 1400px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 20px;
+            color: #888;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-list a:hover, .nav-list a.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+
+        .nav-list a i {
+            font-size: 16px;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 95, 42, 0.3) 0%, rgba(230, 126, 34, 0.2) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 900;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Categories Grid */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .section-title .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 165, 116, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .category-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .icon-cooking { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
+        .icon-photos { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+        .icon-market { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); }
+        .icon-news { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+        .icon-sports { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .icon-chat { background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); }
+        .icon-jobs { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+        .icon-health { background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%); }
+        .icon-tech { background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); }
+        .icon-religion { background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%); }
+        .icon-education { background: linear-gradient(135deg, #673ab7 0%, #512da8 100%); }
+        .icon-events { background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%); }
+
+        .category-info h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .category-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .category-stats {
+            display: flex;
+            gap: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .cat-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .cat-stat i {
+            color: var(--secondary);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Latest Posts */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .post-card {
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover {
+            border-color: rgba(212, 165, 116, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 16px;
+        }
+
+        .author-info h5 {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .author-info span {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .post-time {
+            font-size: 12px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .post-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .post-preview {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(212, 165, 116, 0.15);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            color: #666;
+        }
+
+        .post-actions span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(22, 27, 34, 0.95);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
+            padding: 50px 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-about .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer h4 {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--gradient-1);
+            border-color: transparent;
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .header-main {
+                padding: 15px 20px;
+            }
+
+            .nav {
+                padding: 0 20px;
+            }
+
+            .main {
+                padding: 20px;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                display: none;
+            }
+
+            .logo-text span {
+                display: none;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .nav-list {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+            }
+
+            .nav-list a {
+                padding: 12px 15px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-card, .post-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        .category-card:nth-child(5) { animation-delay: 0.5s; }
+        .category-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="welcome-text">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>مرحباً بكم في منتدى حي غير أولاد الديانسي - الرغاية</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>غير أولاد الديانسي</h1>
+                    <span>منتدى حي الرغاية</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="ابحث في المنتدى...">
+                </div>
+                <button class="btn btn-outline">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i>
+                    عضوية جديدة
+                </button>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#"><i class="fas fa-utensils"></i> الطبخ</a></li>
+                <li><a href="#"><i class="fas fa-images"></i> الصور</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> البيع والشراء</a></li>
+                <li><a href="#"><i class="fas fa-newspaper"></i> الأخبار</a></li>
+                <li><a href="#"><i class="fas fa-futbol"></i> الرياضة</a></li>
+                <li><a href="#"><i class="fas fa-comments"></i> النقاشات</a></li>
+                <li><a href="#"><i class="fas fa-briefcase"></i> الوظائف</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>أهلاً بكم في منتدى حي غير أولاد الديانسي</h2>
+            <p>المنصة الرقمية لأهالي الحي - للتواصل، المشاركة، والتعاون في بناء مجتمع أفضل</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">2,847</div>
+                    <div class="stat-label">عضو نشط</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15,432</div>
+                    <div class="stat-label">مشاركة</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1,256</div>
+                    <div class="stat-label">موضوع</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">342</div>
+                    <div class="stat-label">متصل الآن</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section>
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="icon"><i class="fas fa-th-large"></i></div>
+                    <h3>أقسام المنتدى</h3>
+                </div>
+            </div>
+
+            <div class="categories-grid">
+                <!-- قسم الطبخ -->
+                <div class="category-card">
+                    <span class="category-badge">الأكثر نشاطاً</span>
+                    <div class="category-header">
+                        <div class="category-icon icon-cooking">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>قسم الطبخ والوصفات</h4>
+                            <p>شاركي وصفاتك المفضلة وأسرار المطبخ، من الأطباق التقليدية الجزائرية إلى الحلويات والنكتير</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>3,245 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>45,890 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الصور -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-photos">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>قسم الصور</h4>
+                            <p>معرض صور الحي، المناسبات، المعالم، وأجمل اللحظات من حياتنا في غير أولاد الديانسي</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>2,156 ألبوم</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>38,450 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم البيع والشراء -->
+                <div class="category-card">
+                    <span class="category-badge">جديد</span>
+                    <div class="category-header">
+                        <div class="category-icon icon-market">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>البيع والشراء</h4>
+                            <p>سوق الحي الإلكتروني - بيع وشراء، خدمات، وتأجير في منطقتك</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>1,890 إعلان</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>28,320 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم أخبار الحي -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-news">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>أخبار الحي</h4>
+                            <p>آخر الأخبار والأنشطة في الحي، المشاريع، والفعاليات القادمة</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>456 خبر</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>15,670 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الرياضة -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-sports">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>قسم الرياضة</h4>
+                            <p>نتائج المباريات، أندية الحي، البطولات المحلية، ونقاشات كرة القدم</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>1,234 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>22,180 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم النقاشات العامة -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-chat">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>النقاشات العامة</h4>
+                            <p>كل ما يخص الحي وأهله - آراء، مقترحات، أسئلة، وترحيب بالأعضاء الجدد</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>2,890 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>35,670 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الوظائف -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-jobs">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>الوظائف والعمل</h4>
+                            <p>فرص عمل، طلبات توظيف، وأعمال حرة متوفرة في المنطقة</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>567 وظيفة</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>12,340 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الصحة -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-health">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>الصحة والطب</h4>
+                            <p>نصائح صحية، معلومات طبية، والبحث عن أطباء في المنطقة</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>890 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>18,450 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم التكنولوجيا -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-tech">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>التكنولوجيا</h4>
+                            <p>هواتف، حواسيب، إنترنت، وحلول تقنية لأهل الحي</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>1,123 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>20,890 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الدين -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-religion">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>الشؤون الدينية</h4>
+                            <p>أنشطة دينية، محاضرات، مواعيد الصلاة، وخيرات الحي</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>678 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>14,230 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم التعليم -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon icon-education">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>التعليم والدروس</h4>
+                            <p>معلمين، دورات، مدرسين خصوصيين، ومساعدة في الواجبات</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>456 موضوع</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>11,780 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الفعاليات -->
+                <div class="category-card">
+                    <span class="category-badge">قريباً</span>
+                    <div class="category-header">
+                        <div class="category-icon icon-events">
+                            <i class="fas fa-calendar-star"></i>
+                        </div>
+                        <div class="category-info">
+                            <h4>الفعاليات والمناسبات</h4>
+                            <p>حفلات، مهرجانات، أعراس، ومناسبات الحي المختلفة</p>
+                        </div>
+                    </div>
+                    <div class="category-stats">
+                        <div class="cat-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>234 فعالية</span>
+                        </div>
+                        <div class="cat-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>9,560 مشاهدة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posts -->
+        <section style="margin-top: 50px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="icon"><i class="fas fa-fire"></i></div>
+                    <h3>أحدث المواضيع</h3>
+                </div>
+                <button class="btn btn-outline">عرض الكل</button>
+            </div>
+
+            <div class="posts-grid">
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="author-avatar">ك</div>
+                            <div class="author-info">
+                                <h5>كريم بن علي</h5>
+                                <span>عضو متميز</span>
+                            </div>
+                        </div>
+                        <div class="post-time">
+                            <i class="far fa-clock"></i>
+                            منذ 15 دقيقة
+                        </div>
+                    </div>
+                    <h4 class="post-title">وصفة كسكس جزائري أصيل - الطريقة التقليدية</h4>
+                    <p class="post-preview">أنا اليوم جبتلكم وصفة الكسكس بالطريقة الأصلية كما تعملها جدتي، خطوة بخطوة مع كل الأسرار...</p>
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <span class="tag">طبخ</span>
+                            <span class="tag">وصفات</span>
+                            <span class="tag">كسكس</span>
+                        </div>
+                        <div class="post-actions">
+                            <span><i class="far fa-heart"></i> 124</span>
+                            <span><i class="far fa-comment"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="author-avatar">ف</div>
+                            <div class="author-info">
+                                <h5>فاطمة الزهراء</h5>
+                                <span>مشرفة</span>
+                            </div>
+                        </div>
+                        <div class="post-time">
+                            <i class="far fa-clock"></i>
+                            منذ ساعة
+                        </div>
+                    </div>
+                    <h4 class="post-title">صور من حفلة العرس الجماعي - حي غير أولاد الديانسي</h4>
+                    <p class="post-preview">تم رفع ألبوم الصور الكامل من حفلة العرس الجماعي يوم الجمعة الماضي، شوفوا الصور حلوة...</p>
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <span class="tag">صور</span>
+                            <span class="tag">مناسبات</span>
+                            <span class="tag">أعراس</span>
+                        </div>
+                        <div class="post-actions">
+                            <span><i class="far fa-heart"></i> 89</span>
+                            <span><i class="far fa-comment"></i> 23</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="author-avatar">م</div>
+                            <div class="author-info">
+                                <h5>محمد أمين</h5>
+                                <span>عضو جديد</span>
+                            </div>
+                        </div>
+                        <div class="post-time">
+                            <i class="far fa-clock"></i>
+                            منذ ساعتين
+                        </div>
+                    </div>
+                    <h4 class="post-title">للبيع: شقة 3 غرف بموقع ممتاز - الحي الجديد</h4>
+                    <p class="post-preview">شقة للبيع，面积 85م²، طابق 3 مع مصعد، موقع استراتيجي perto from مسجد...</p>
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <span class="tag">عقارات</span>
+                            <span class="tag">للبيع</span>
+                        </div>
+                        <div class="post-actions">
+                            <span><i class="far fa-heart"></i> 12</span>
+                            <span><i class="far fa-comment"></i> 8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="author-avatar">أ</div>
+                            <div class="author-info">
+                                <h5>أحمد بن سعيد</h5>
+                                <span>عضو نشط</span>
+                            </div>
+                        </div>
+                        <div class="post-time">
+                            <i class="far fa-clock"></i>
+                            منذ 3 ساعات
+                        </div>
+                    </div>
+                    <h4 class="post-title">مباراة كرة القدم يوم الجمعة - فرق الحي</h4>
+                    <p class="post-preview">الجماعة، نتذكر المباراة كل جمعة الساعة 4 عصراً في ملعب البلدية. الكل مدعو للمشاركة...</p>
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <span class="tag">رياضة</span>
+                            <span class="tag">كرة قدم</span>
+                            <span class="tag">فاعلية</span>
+                        </div>
+                        <div class="post-actions">
+                            <span><i class="far fa-heart"></i> 67</span>
+                            <span><i class="far fa-comment"></i> 34</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>غير أولاد الديانسي</h1>
+                        <span>منتدى حي الرغاية</span>
+                    </div>
+                </div>
+                <p>منتدى غير أولاد الديانسي هو منصة رقمية لخدمة أهالي الحي،促進 التواصل، ومشاركة الأخبار والمعلومات.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">أقسام المنتدى</a></li>
+                    <li><a href="#">الأعضاء</a></li>
+                    <li><a href="#">البحث</a></li>
+                    <li><a href="#">التسجيل</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>الأقسام</h4>
+                <ul class="footer-links">
+                    <li><a href="#">الطبخ</a></li>
+                    <li><a href="#">الصور</a></li>
+                    <li><a href="#">البيع والشراء</a></li>
+                    <li><a href="#">الرياضة</a></li>
+                    <li><a href="#">النقاشات</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>تواصل معنا</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-envelope"></i> info@diyansi.com</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> 0555 123 456</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> الرغاية، الجزائر</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 منتدى غير أولاد الديانسي - جميع الحقوق محفوظة | صنع بـ ❤️ لأهل الحي</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab">
+        <i class="fas fa-plus"></i>
+    </div>
+</body>
+</html>
