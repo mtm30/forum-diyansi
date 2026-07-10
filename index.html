@@ -19,8 +19,6 @@
             --success: #27ae60;
             --gradient-1: linear-gradient(135deg, #1a5f2a 0%, #27ae60 100%);
             --gradient-2: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
-            --shadow: 0 10px 40px rgba(0,0,0,0.15);
-            --shadow-lg: 0 20px 60px rgba(0,0,0,0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,8 +37,7 @@
             width: 100%; height: 100%;
             background-image: 
                 radial-gradient(circle at 20% 50%, rgba(26, 95, 42, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(230, 126, 34, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 40% 80%, rgba(39, 174, 96, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 80% 20%, rgba(230, 126, 34, 0.1) 0%, transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -111,28 +108,6 @@
             gap: 15px;
             align-items: center;
         }
-
-        .search-box {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 25px;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 300px;
-        }
-
-        .search-box input {
-            background: none;
-            border: none;
-            color: white;
-            font-family: 'Cairo', sans-serif;
-            width: 100%;
-            font-size: 14px;
-        }
-
-        .search-box input::placeholder { color: #666; }
 
         .btn {
             padding: 10px 25px;
@@ -225,26 +200,11 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
         .hero h2 {
             font-size: 36px;
             font-weight: 900;
             color: white;
             margin-bottom: 15px;
-            position: relative;
         }
 
         .hero p {
@@ -252,28 +212,19 @@
             color: #888;
             max-width: 600px;
             margin: 0 auto;
-            position: relative;
         }
 
-        .hero-stats {
+        .hero-cta {
+            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 50px;
-            margin-top: 30px;
-            position: relative;
+            gap: 15px;
         }
 
-        .stat { text-align: center; }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 900;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero .btn-large {
+            padding: 15px 40px;
+            font-size: 16px;
         }
-
-        .stat-label { font-size: 14px; color: #666; }
 
         /* Section Header */
         .section-header {
@@ -322,6 +273,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .category-card::before {
@@ -385,26 +337,26 @@
             line-height: 1.6;
         }
 
-        .category-stats {
+        .category-footer {
             display: flex;
-            gap: 25px;
+            justify-content: space-between;
+            align-items: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .cat-stat {
+        .topic-count {
+            color: #888;
+            font-size: 13px;
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #888;
-            font-size: 13px;
         }
-
-        .cat-stat .emoji { font-size: 14px; }
 
         .category-badge {
             position: absolute;
-            top: 20px; left: 20px;
+            top: 20px;
+            left: 20px;
             background: var(--gradient-2);
             color: white;
             padding: 5px 12px;
@@ -413,118 +365,31 @@
             font-weight: 600;
         }
 
-        /* Posts Grid */
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 25px;
-        }
-
-        .post-card {
+        /* Empty State */
+        .empty-state {
             background: rgba(22, 27, 34, 0.8);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 25px;
-            transition: all 0.3s ease;
+            border: 2px dashed rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            margin: 40px 0;
         }
 
-        .post-card:hover {
-            border-color: rgba(212, 165, 116, 0.3);
-            transform: translateY(-3px);
+        .empty-state .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
         }
 
-        .post-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .post-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .author-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
+        .empty-state h3 {
             color: white;
-            font-size: 16px;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        .author-info h5 {
-            color: white;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .author-info span {
-            font-size: 12px;
-            color: #666;
-        }
-
-        .post-time {
-            font-size: 12px;
-            color: #555;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .post-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .post-preview {
-            font-size: 14px;
+        .empty-state p {
             color: #888;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .post-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .post-tags {
-            display: flex;
-            gap: 8px;
-        }
-
-        .tag {
-            background: rgba(212, 165, 116, 0.15);
-            color: var(--secondary);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-        }
-
-        .post-actions {
-            display: flex;
-            gap: 15px;
-            color: #666;
-        }
-
-        .post-actions span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 13px;
+            font-size: 16px;
+            margin-bottom: 30px;
         }
 
         /* Footer */
@@ -630,18 +495,17 @@
             .header-main { padding: 15px 20px; }
             .nav { padding: 0 20px; }
             .main { padding: 20px; }
-            .categories-grid, .posts-grid { grid-template-columns: 1fr; }
+            .categories-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
             .header-top { display: none; }
-            .logo-text span, .search-box { display: none; }
+            .logo-text span { display: none; }
             .nav-list { overflow-x: auto; justify-content: flex-start; }
             .hero { padding: 30px 20px; }
             .hero h2 { font-size: 24px; }
-            .hero-stats { gap: 30px; }
-            .stat-number { font-size: 28px; }
+            .hero-cta { flex-direction: column; }
             .footer-content { grid-template-columns: 1fr; }
         }
 
@@ -650,7 +514,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .category-card, .post-card {
+        .category-card {
             animation: fadeInUp 0.6s ease forwards;
         }
 
@@ -681,10 +545,6 @@
                 </div>
             </div>
             <div class="header-actions">
-                <div class="search-box">
-                    <span>🔍</span>
-                    <input type="text" placeholder="ابحث في المنتدى...">
-                </div>
                 <button class="btn btn-outline">
                     <span>🔓</span> تسجيل الدخول
                 </button>
@@ -711,25 +571,15 @@
     <main class="main">
         <!-- Hero Section -->
         <section class="hero">
-            <h2>أهلاً بكم في منتدى حي غير أولاد الديانسي</h2>
-            <p>المنصة الرقمية لأهالي الحي - للتواصل، المشاركة، والتعاون في بناء مجتمع أفضل</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">2,847</div>
-                    <div class="stat-label">عضو نشط</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">15,432</div>
-                    <div class="stat-label">مشاركة</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">1,256</div>
-                    <div class="stat-label">موضوع</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">342</div>
-                    <div class="stat-label">متصل الآن</div>
-                </div>
+            <h2>أهلاً بك في منتدى حي غير أولاد الديانسي</h2>
+            <p>انضم إلينا وكن أول من يشارك في بناء مجتمع رقمي لأهالي الحي!</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary btn-large">
+                    <span>➕</span> أنشئ موضوع جديد
+                </button>
+                <button class="btn btn-outline btn-large">
+                    <span>👤</span> سجّل الآن
+                </button>
             </div>
         </section>
 
@@ -745,17 +595,15 @@
             <div class="categories-grid">
                 <!-- قسم الطبخ -->
                 <div class="category-card">
-                    <span class="category-badge">الأكثر نشاطاً</span>
                     <div class="category-header">
                         <div class="category-icon icon-cooking">🍳</div>
                         <div class="category-info">
                             <h4>قسم الطبخ والوصفات</h4>
-                            <p>شاركي وصفاتك المفضلة وأسرار المطبخ، من الأطباق التقليدية الجزائرية إلى الحلويات والنكتير</p>
+                            <p>شارق وصفاتك المفضلة وأسرار المطبخ، من الأطباق التقليدية الجزائرية إلى الحلويات</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>3,245 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>45,890 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
@@ -768,15 +616,14 @@
                             <p>معرض صور الحي، المناسبات، المعالم، وأجمل اللحظات من حياتنا في غير أولاد الديانسي</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>2,156 ألبوم</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>38,450 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
                 <!-- قسم البيع والشراء -->
                 <div class="category-card">
-                    <span class="category-badge">جديد</span>
+                    <div class="category-badge">جديد</div>
                     <div class="category-header">
                         <div class="category-icon icon-market">🛒</div>
                         <div class="category-info">
@@ -784,9 +631,8 @@
                             <p>سوق الحي الإلكتروني - بيع وشراء، خدمات، وتأجير في منطقتك</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>1,890 إعلان</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>28,320 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 إعلان</div>
                     </div>
                 </div>
 
@@ -799,9 +645,8 @@
                             <p>آخر الأخبار والأنشطة في الحي، المشاريع، والفعاليات القادمة</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>456 خبر</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>15,670 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 خبر</div>
                     </div>
                 </div>
 
@@ -814,9 +659,8 @@
                             <p>نتائج المباريات، أندية الحي، البطولات المحلية، ونقاشات كرة القدم</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>1,234 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>22,180 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
@@ -829,9 +673,8 @@
                             <p>كل ما يخص الحي وأهله - آراء، مقترحات، أسئلة، وترحيب بالأعضاء الجدد</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>2,890 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>35,670 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
@@ -844,9 +687,8 @@
                             <p>فرص عمل، طلبات توظيف، وأعمال حرة متوفرة في المنطقة</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>567 وظيفة</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>12,340 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 وظيفة</div>
                     </div>
                 </div>
 
@@ -859,9 +701,8 @@
                             <p>نصائح صحية، معلومات طبية، والبحث عن أطباء في المنطقة</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>890 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>18,450 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
@@ -874,9 +715,8 @@
                             <p>هواتف، حواسيب، إنترنت، وحلول تقنية لأهل الحي</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>1,123 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>20,890 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
@@ -889,9 +729,8 @@
                             <p>أنشطة دينية، محاضرات، مواعيد الصلاة، وخيرات الحي</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>678 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>14,230 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
@@ -904,15 +743,14 @@
                             <p>معلمين، دورات، مدرسين خصوصيين، ومساعدة في الواجبات</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>456 موضوع</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>11,780 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 موضوع</div>
                     </div>
                 </div>
 
                 <!-- قسم الفعاليات -->
                 <div class="category-card">
-                    <span class="category-badge">قريباً</span>
+                    <div class="category-badge">قريباً</div>
                     <div class="category-header">
                         <div class="category-icon icon-events">📅</div>
                         <div class="category-info">
@@ -920,135 +758,22 @@
                             <p>حفلات، مهرجانات، أعراس، ومناسبات الحي المختلفة</p>
                         </div>
                     </div>
-                    <div class="category-stats">
-                        <div class="cat-stat"><span class="emoji">💬</span> <span>234 فعالية</span></div>
-                        <div class="cat-stat"><span class="emoji">👁️</span> <span>9,560 مشاهدة</span></div>
+                    <div class="category-footer">
+                        <div class="topic-count"><span>📝</span> 0 فعالية</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Latest Posts -->
-        <section style="margin-top: 50px;">
-            <div class="section-header">
-                <div class="section-title">
-                    <div class="section-icon">🔥</div>
-                    <h3>أحدث المواضيع</h3>
-                </div>
-                <button class="btn btn-outline">عرض الكل</button>
-            </div>
-
-            <div class="posts-grid">
-                <div class="post-card">
-                    <div class="post-header">
-                        <div class="post-author">
-                            <div class="author-avatar">ك</div>
-                            <div class="author-info">
-                                <h5>كريم بن علي</h5>
-                                <span>عضو متميز</span>
-                            </div>
-                        </div>
-                        <div class="post-time">
-                            <span>🕐</span> منذ 15 دقيقة
-                        </div>
-                    </div>
-                    <h4 class="post-title">وصفة كسكس جزائري أصيل - الطريقة التقليدية</h4>
-                    <p class="post-preview">أنا اليوم جبتلكم وصفة الكسكس بالطريقة الأصلية كما تعملها جدتي، خطوة بخطوة مع كل الأسرار...</p>
-                    <div class="post-footer">
-                        <div class="post-tags">
-                            <span class="tag">طبخ</span>
-                            <span class="tag">وصفات</span>
-                            <span class="tag">كسكس</span>
-                        </div>
-                        <div class="post-actions">
-                            <span>❤️ 124</span>
-                            <span>💬 45</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post-card">
-                    <div class="post-header">
-                        <div class="post-author">
-                            <div class="author-avatar">ف</div>
-                            <div class="author-info">
-                                <h5>فاطمة الزهراء</h5>
-                                <span>مشرفة</span>
-                            </div>
-                        </div>
-                        <div class="post-time">
-                            <span>🕐</span> منذ ساعة
-                        </div>
-                    </div>
-                    <h4 class="post-title">صور من حفلة العرس الجماعي - حي غير أولاد الديانسي</h4>
-                    <p class="post-preview">تم رفع ألبوم الصور الكامل من حفلة العرس الجماعي يوم الجمعة الماضي، شوفوا الصور حلوة...</p>
-                    <div class="post-footer">
-                        <div class="post-tags">
-                            <span class="tag">صور</span>
-                            <span class="tag">مناسبات</span>
-                        </div>
-                        <div class="post-actions">
-                            <span>❤️ 89</span>
-                            <span>💬 23</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post-card">
-                    <div class="post-header">
-                        <div class="post-author">
-                            <div class="author-avatar">م</div>
-                            <div class="author-info">
-                                <h5>محمد أمين</h5>
-                                <span>عضو جديد</span>
-                            </div>
-                        </div>
-                        <div class="post-time">
-                            <span>🕐</span> منذ ساعتين
-                        </div>
-                    </div>
-                    <h4 class="post-title">للبيع: شقة 3 غرف بموقع ممتاز - الحي الجديد</h4>
-                    <p class="post-preview">شقة للبيع 85م²، طابق 3 مع مصعد، موقع استراتيجي قرب المسجد...</p>
-                    <div class="post-footer">
-                        <div class="post-tags">
-                            <span class="tag">عقارات</span>
-                            <span class="tag">للبيع</span>
-                        </div>
-                        <div class="post-actions">
-                            <span>❤️ 12</span>
-                            <span>💬 8</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post-card">
-                    <div class="post-header">
-                        <div class="post-author">
-                            <div class="author-avatar">أ</div>
-                            <div class="author-info">
-                                <h5>أحمد بن سعيد</h5>
-                                <span>عضو نشط</span>
-                            </div>
-                        </div>
-                        <div class="post-time">
-                            <span>🕐</span> منذ 3 ساعات
-                        </div>
-                    </div>
-                    <h4 class="post-title">مباراة كرة القدم يوم الجمعة - فرق الحي</h4>
-                    <p class="post-preview">الجماعة، نتذكر المباراة كل جمعة الساعة 4 عصراً في ملعب البلدية. الكل مدعو للمشاركة...</p>
-                    <div class="post-footer">
-                        <div class="post-tags">
-                            <span class="tag">رياضة</span>
-                            <span class="tag">كرة قدم</span>
-                        </div>
-                        <div class="post-actions">
-                            <span>❤️ 67</span>
-                            <span>💬 34</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Empty State -->
+        <div class="empty-state">
+            <div class="icon">🚀</div>
+            <h3>المنتدى جاهز للبداية!</h3>
+            <p>سجّل الآن وكن أول من يشارك موضوعاً في منتدى حي غير أولاد الديانسي</p>
+            <button class="btn btn-primary btn-large">
+                <span>👤</span> أنشئ حسابك الآن
+            </button>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -1062,7 +787,7 @@
                         <span>منتدى حي الرغاية</span>
                     </div>
                 </div>
-                <p>منتدى غير أولاد الديانسي هو منصة رقمية لخدمة أهالي الحي،、促进 التواصل، ومشاركة الأخبار والمعلومات.</p>
+                <p>منتدى غير أولاد الديانسي هو منصة رقمية لخدمة أهالي الحي، للتواصل ومشاركة الأخبار والمعلومات.</p>
                 <div class="social-links">
                     <a href="#">📘</a>
                     <a href="#">📷</a>
@@ -1076,9 +801,8 @@
                 <ul class="footer-links">
                     <li><a href="#">الرئيسية</a></li>
                     <li><a href="#">أقسام المنتدى</a></li>
-                    <li><a href="#">الأعضاء</a></li>
-                    <li><a href="#">البحث</a></li>
                     <li><a href="#">التسجيل</a></li>
+                    <li><a href="#">تسجيل الدخول</a></li>
                 </ul>
             </div>
             <div>
@@ -1088,14 +812,11 @@
                     <li><a href="#">الصور</a></li>
                     <li><a href="#">البيع والشراء</a></li>
                     <li><a href="#">الرياضة</a></li>
-                    <li><a href="#">النقاشات</a></li>
                 </ul>
             </div>
             <div>
                 <h4>تواصل معنا</h4>
                 <ul class="footer-links">
-                    <li><a href="#">📧 info@diyansi.com</a></li>
-                    <li><a href="#">📞 0555 123 456</a></li>
                     <li><a href="#">📍 الرغاية، الجزائر</a></li>
                 </ul>
             </div>
